@@ -108,7 +108,7 @@ package.json
 
 - **File:** `src/components/DropdownConfigurator/DropdownConfigurator.tsx`
 - **Description:**  
-  An interactive configurator for the dropdown component. It lets you toggle between multi-select and controlled modes, and specify the number of options via a standard text input. Virtualization is automatically enabled when the option count is 100 or more.
+  An interactive configurator for the dropdown component. It lets you toggle between multi-select and controlled modes, and specify the number of options via a standard text input. Virtualization is automatically enabled when the option count is 100 (default value of `VIRTUALIZATION_THRESHOLD`) or more.
 - **Key Features:**
   - A brief info dialog explaining the configuration options.
   - Checkboxes for toggling multi-select and controlled modes.
