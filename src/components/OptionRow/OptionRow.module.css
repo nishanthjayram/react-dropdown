@@ -1,0 +1,21 @@
+.optionRow {
+  position: relative;
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+  background: white;
+}
+
+.selected {
+  background-color: #e0e0e0;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.labelText {
+  margin-left: 8px;
+}
