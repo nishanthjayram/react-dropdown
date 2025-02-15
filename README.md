@@ -73,6 +73,8 @@ package.json
   - `onChange`: Callback function called when selection changes.
   - `placeholder`: Text displayed when no option is selected.
   - `virtualize` (optional): If true, enables virtualization; typically set dynamically based on the number of options.
+  - `style` (optional): Custom styles for the dropdown container.
+  - `className` (optional): Custom class name for the dropdown container.
 
 ### DropdownHeader
 
@@ -85,6 +87,8 @@ package.json
   - `isMultiSelect`: Indicates if multi-select mode is enabled.
   - `isOpen`: Indicates if the dropdown is open.
   - `onToggle`: Function that toggles the dropdown open/closed.
+  - `style` (optional): Custom styles for the header container.
+  - `className` (optional): Custom class name for the header container.
 
 ### OptionRow
 
@@ -97,6 +101,8 @@ package.json
   - `isSelected`: Boolean indicating if the option is selected.
   - `multiSelect`: If true, renders the checkbox.
   - `onOptionClick`: Function called when the option is clicked.
+  - `style` (optional): Custom styles for the option row.
+  - `className` (optional): Custom class name for the option row.
 
 ### DropdownConfigurator
 
@@ -131,6 +137,7 @@ package.json
   ```ts
   export const CONTAINER_HEIGHT = 200;
   export const ITEM_HEIGHT = 36;
+  export const VIRTUALIZATION_THRESHOLD = 100;
   ```
 - **File:** `src/utils/types.ts`  
   Contains type definitions, for example:

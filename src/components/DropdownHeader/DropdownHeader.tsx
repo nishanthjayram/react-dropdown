@@ -8,6 +8,8 @@ type DropdownHeaderProps = {
   isMultiSelect: boolean;
   isOpen: boolean;
   onToggle: () => void;
+  style?: React.CSSProperties;
+  className?: string;
 };
 
 const DropdownHeader: React.FC<DropdownHeaderProps> = ({
@@ -16,6 +18,8 @@ const DropdownHeader: React.FC<DropdownHeaderProps> = ({
   isMultiSelect,
   isOpen,
   onToggle,
+  style,
+  className,
 }) => {
   // Render the text displayed in the header based on the selected options.
   const renderSelectionText = () => {
@@ -31,7 +35,11 @@ const DropdownHeader: React.FC<DropdownHeaderProps> = ({
   };
 
   return (
-    <div className={styles.dropdownHeader} onClick={onToggle}>
+    <div
+      className={className ?? styles.dropdownHeader}
+      style={style}
+      onClick={onToggle}
+    >
       {renderSelectionText()}
       <span className={styles.dropdownArrow}>{isOpen ? "▲" : "▼"}</span>
     </div>

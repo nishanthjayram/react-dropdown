@@ -14,6 +14,8 @@ type TDropdownProps = {
   onChange: (selected: TOption | TOption[] | null) => void; // Callback for selection change.
   placeholder?: string; // Optional placeholder text when no option is selected.
   virtualize?: boolean; // Flag to virtualize the list.
+  style?: React.CSSProperties; // Optional style object for the dropdown.
+  className?: string; // Optional class name for the dropdown.
 };
 
 const Dropdown: React.FC<TDropdownProps> = ({
@@ -23,6 +25,8 @@ const Dropdown: React.FC<TDropdownProps> = ({
   onChange,
   placeholder = "Select...",
   virtualize = true,
+  style,
+  className,
 }) => {
   // Manage open state and internal selection (for uncontrolled usage)
   const [isOpen, setIsOpen] = useState(false);
@@ -191,7 +195,11 @@ const Dropdown: React.FC<TDropdownProps> = ({
     : { paddingTop: topOffset };
 
   return (
-    <div className={styles.dropdown} ref={dropdownRef}>
+    <div
+      className={className ?? styles.dropdown}
+      style={style}
+      ref={dropdownRef}
+    >
       <DropdownHeader
         selectedOptions={[...currentSelection].sort((a, b) =>
           a.value.localeCompare(b.value)

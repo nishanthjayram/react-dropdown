@@ -10,6 +10,7 @@ type OptionRowProps = {
   onOptionClick: (option: TOption) => void;
   virtualize?: boolean;
   style?: React.CSSProperties;
+  className?: string;
 };
 
 const OptionRow: React.FC<OptionRowProps> = ({
@@ -20,6 +21,7 @@ const OptionRow: React.FC<OptionRowProps> = ({
   onOptionClick,
   virtualize = false,
   style,
+  className,
 }) => {
   const handleClick = (
     e: React.MouseEvent | React.ChangeEvent<HTMLInputElement>
@@ -36,7 +38,9 @@ const OptionRow: React.FC<OptionRowProps> = ({
 
   return (
     <div
-      className={`${styles.optionRow} ${isSelected ? styles.selected : ""}`}
+      className={
+        className ?? `${styles.optionRow} ${isSelected ? styles.selected : ""}`
+      }
       style={finalStyle}
       onClick={handleClick}
     >
